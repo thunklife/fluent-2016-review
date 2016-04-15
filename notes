@@ -1,0 +1,85 @@
+TESTS
+structure
+  big objects -> big tests
+  deps, side effects, logical branches
+  rule of product
+    upper bounds of test cases = the product of your arguments
+    don't add on two new objects
+  write small stuff
+  test 3 things
+    Arrange, Act, Assert
+    Given, When, Then
+    formatting so you can tell what is what
+    lots of Given = too many deps
+    lots of When = too many conditions
+    lots of Then = Code doing too much
+  Hard to skim
+    Avoid logic in test because there are no tests, easy to miss errors
+    DRY in tests? If you experience test pain, look at your code, not your tests
+    data structure in test for example.
+    understand the thing under test,
+    consistency
+    names should mean something
+  Accidentally creative
+    names: subject, result
+    point out meaningless stuff
+    unimportant code should look obviously unimportant
+    minimally meaningful tests
+
+isolation
+  Unfocused tests
+    Tests should be focused and consistent
+    The testing pyramid
+    two test suites
+    1 highly integrated, 1 highly isolated
+    establish conventions
+  Too realistic
+    Most teams write tests that are too realistic
+    Eventually something breaks and the solution is to write more realistic tests
+    slower, time consuming to change, harder to understand, fail for more reasons because of moving parts
+    Establish clear boundaries
+    realism is costly
+    less integrated tests provide better design feedback
+  Careless mocking
+    mocks are usually used to shut-up deps that are hard to use in tests
+
+Test Feedback
+  Bad error messages
+    judge assertion libraries on message quality
+  Slow feedback loops
+    optimize feedback loops because seconds add up
+  False negatives
+    false negatives => unfinished and tests need to be updated
+    true negatives are rare
+    Top reasons
+      redundant coverage
+      slow tests
+    track if failures are true or false negatives, see how long it takes to
+    fix them, measure.
+
+TLDR write fewer integration tests
+
+SEIF
+
+Security on the web
+The web was not designed to do what we do with it
+Removes reliance on password
+What's wrong with the web
+  Insecure
+  Complex
+    keep adding new stuff
+  http
+    designed for retrieving documents
+    doesn't work for the type of apps that we build today
+  dns
+    not compatible with the trademark system
+    inherent in the system
+  ssl
+    complex -> insecure
+    reliance on cert authorities
+  HTML
+    poor as a markup language
+    really terrible for applications
+  DOM
+  CSS
+  JavaScript
